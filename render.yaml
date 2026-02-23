@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: n8n-agent
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: N8N_BASIC_AUTH_ACTIVE
+        value: true
+      - key: N8N_BASIC_AUTH_USER
+        value: admin
+      - key: N8N_BASIC_AUTH_PASSWORD
+        generateValue: true
+      - key: N8N_PORT
+        value: 10000
+      - key: N8N_PROTOCOL
+        value: https
+      - key: EXECUTIONS_PROCESS
+        value: main
+      - key: GENERIC_TIMEZONE
+        value: Asia/Ho_Chi_Minh
